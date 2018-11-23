@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:converters="clr-namespace:LoggerTest.Converters"
+             
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LoggerTest.Views.LogView">
+    <ContentView.Content>
+
+        <StackLayout>
+
+            <Grid Margin="0,50">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="33.3*"/>
+                    <ColumnDefinition Width="33.3*"/>
+                    <ColumnDefinition Width="33.3*"/>
+                </Grid.ColumnDefinitions>
+            
+            <Button Text="Info"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="20"
+                    Command="{Binding AddLogMessageCommand}"
+                    CommandParameter="1" />
+
+            <Button Text="Warning"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="Yellow"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="10,20"
+                    Command="{Binding AddLogMessageCommand}"
+                    CommandParameter="3"/>
+
+            <Button Text="Error"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    BackgroundColor="Orange"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="20"
+                    Command="{Binding AddLogMessageCommand}"
+                    CommandParameter="4" />
+
+            <Button Text="Trace"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="20"
+                    Command="{Binding AddLogMessageCommand}"
+                    CommandParameter="0" />
+
+            <Button Text="Debug"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="20"
+                    Command="{Binding AddLogMessageCommand}"
+                    CommandParameter="2"/>
+
+            <Button Text="Fatal"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    BackgroundColor="Red"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="20"
+                    Command="{Binding AddLogMessageCommand}"
+                    CommandParameter="5" />
+
+            </Grid>
+
+            <Button Text="Clean Log File"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Margin="0,20"
+                    WidthRequest="200"
+                    HeightRequest="40"
+                    Command="{Binding ResetLogFileCommand}" />
+            
+        </StackLayout>
+
+    </ContentView.Content>
+</ContentView>
